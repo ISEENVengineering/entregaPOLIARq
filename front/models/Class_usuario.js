@@ -1,4 +1,4 @@
-export class Usuario {
+class Usuario {
     constructor(id, nombres, apellidos, emailAddrs, psw, edad, numJuegos, juegos, rol) {
         this.id = id;
         this.nombres = nombres;
@@ -9,14 +9,36 @@ export class Usuario {
         this.numJuegos = numJuegos;
         this.juegos = juegos;
         this.rol = rol;
+        console.log('Usuario creado');
     }
+    /*
+       InputName: req.body.InputName,
+           InputLastN: req.body.InputLastN,
+           emailToSend: req.body.emailToSend,
+           pswToSend: req.body.pswToSend,
+           InputYOld: req.body.InputYOld,
+           InputRolUser: req.body.InputRolUser
+       */
 
-    sendEMails(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('sending email')
+    get() {
+        json_user = {
+            id: this.id,
+            nombres: this.nombres,
+            apellidos: this.apellidos,
+            emailAddrs: this.emailAddrs,
+            psw: this.psw,
+            edad: this.edad,
+            numJuegos: this.numJuegos,
+            juegos: this.juegos,
+            rol: this.rol
         }
-        return resp;
+        return json_user
+    }
+   
+    sendEMails(pathAPI, datos) {
+        console.log('sending email: ', datos.InputName)
+
+        return datos;
     }
 
     listGames(datos) {
@@ -78,3 +100,5 @@ export class Usuario {
         return resp;
     }
 }
+
+module.exports = Usuario

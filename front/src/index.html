@@ -231,29 +231,29 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form onsubmit="IniciarSesion()">
+          <form action="/" method="post">
             <div class="mb-3">
-              <label for="exampleInputName" class="form-label">Nombres</label>
-              <input type="text" class="form-control" id="exampleInputName">
+              <label for="InputName" class="form-label">Nombres</label>
+              <input  id="InputName" type="text" class="form-control" name="InputName">
             </div>
             <div class="mb-3">
-              <label for="exampleInputLastN" class="form-label">Apellidos</label>
-              <input type="text" class="form-control" id="exampleInputLastN">
+              <label for="InputLastN" class="form-label">Apellidos</label>
+              <input  id="InputLastN" type="text" class="form-control" name="InputLastN">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Correo</label>
-              <input id="emailToSend" type="email" class="form-control" aria-describedby="emailHelp">
+              <label for="emailToSend" class="form-label">Correo</label>
+              <input  id="emailToSend" name="emailToSend" type="email" class="form-control" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-              <input id="pswToSend" type="password" class="form-control">
+              <label for="pswToSend" class="form-label">Contraseña</label>
+              <input  id="pswToSend" name="pswToSend" type="password" class="form-control">
             </div>
             <div class="mb-3">
-              <label for="exampleInputYOld" class="form-label">Edad</label>
-              <input type="number" class="form-control" id="exampleInputYOld">
+              <label for="InputYOld" class="form-label">Edad</label>
+              <input  id="InputYOld" type="number" class="form-control" name="InputYOld">
             </div>
             <div class="mb-3">
-              <select class="form-select" aria-label="Default select example">
+              <select  id="InputRolUser" name="InputRolUser" class="form-select" aria-label="Default select ">
                 <option selected>Rol</option>
                 <option value="1">Comprador</option>
               </select>
