@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="./assets/css/index.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <title>Mis juegos</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
+              <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
+              <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
+            </svg>
+            <span class="ms-2">
+              Games
+            </span>
+
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="./index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./juegos.html">Juegos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-cart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                      <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg>
+                    Cerrar sesión
+                  </a></li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Lista de juegos -->
+    <h2 class="text-center mt-5">Mis juegos</h2>
+    <div class="container mt-5">
+      <div class="row justify-content-around">
+        <div class="col-sm-5">
+          <div class="card">
+            <!-- Product image-->
+            <img class="card-img-top" src="https://www.ktronix.com/medias/047875785489-001-750Wx750H?context=bWFzdGVyfGltYWdlc3wzMTA4NDR8aW1hZ2UvanBlZ3xpbWFnZXMvaGMyL2hhMi85ODIyMDEwMTc5NjE0LmpwZ3xhNTRiMGNmMWEwOGRjZmRjZjc4ZTFjNmFlNThmYjc1MTUwMTNlYmQ2ZGQ4NmI3OTkyNWFlMWZmMzU0ODQ1NDFm" alt="..." />
+        </div>
+        </div>
+        <div class="col-sm-5">
+            <h4 class="text-center">Crash bandicoot 4</h5>
+            <h5>Carácteristicas</h5>
+            <p>Neo Cortex y N. Tropy vuelven a hacer de las suyas y lanzan una ofensiva total no solo contra este universo, sino que para todo el multiverso. Crash y Coco llegan para salvar el día reuniendo las cuatro máscaras cuánticas y torciendo las reglas de la realidad.</p>
+
+            <p>¿Habilidades nuevas? Las tenemos. ¿Más personajes jugables? También. ¿Dimensiones alternas? Por supuesto. ¿Jefes absurdos? Claramente. ¿La misma esencia genial? Por los “jorts” de Crash que sí. ¿No se llaman “shorts”? No en este universo.</p>
+            <ul>
+              <li>Una nueva aventura para Crash.</li>
+              <li>Beatae excepturi voluptatibus laboriosam cumque deleniti.</li>
+              <li>Ponte las máscaras cuánticas.</li>
+              <li>Crash, Coco y más.</li>
+              <li>Consigue los skins Totalmente tubulares.</li>
+            </ul>
+            <div class="alert alert-dark text-center" role="alert">
+              Consigue los aspectos destrozatiempos!!
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <!-- Product image-->
+                  <img class="card-img-top" src="https://exitocol.vtexassets.com/arquivos/ids/740538/Videojuego-Fifa-20-Rola-PS4.jpg?v=637051254976000000" alt="..." />
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Product name-->
+                          <h5 class="fw-bolder">Fifa 20</h5>
+                          <!-- Product price-->
+                          $40.00 - $80.00
+                      </div>
+                  </div>
+                  <!-- Product actions-->
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="c-flex">
+                        <div class="c-flex-item" data-bs-toggle="modal" data-bs-target="#message">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                          </svg>
+                        </div>
+                        <div class="c-flex-item">
+                          <div class="text-center"><a class="btn btn-outline-dark mt-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar compra</a></div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Sale badge-->
+                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                <!-- Product image-->
+                <img class="card-img-top" src="https://www.retroplace.com/pics/xboxseriesx/packshots/185217--halo-infinite.png" alt="..." />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder">Halo infinite</h5>
+                        <!-- Product price-->
+                        <span class="text-muted text-decoration-line-through">$50.00</span>
+                        $25.00
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="c-flex">
+                    <div class="c-flex-item" data-bs-toggle="modal" data-bs-target="#message">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                      </svg>
+                    </div>
+                    <div class="c-flex-item">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar compra</a></div>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <!-- Sale badge-->
+                  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                  <!-- Product image-->
+                  <img class="card-img-top" src="https://jose2001.neocities.org/Juegos%20PS4/Fortnite.jpg" alt="..." />
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Product name-->
+                          <h5 class="fw-bolder">Fortnite</h5>
+                          <!-- Product price-->
+                          <span class="text-muted text-decoration-line-through">$50.00</span>
+                          $25.00
+                      </div>
+                  </div>
+                  <!-- Product actions-->
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="c-flex">
+                      <div class="c-flex-item" data-bs-toggle="modal" data-bs-target="#message">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>
+                      </div>
+                      <div class="c-flex-item">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar compra</a></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col mb-5">
+              <div class="card h-100">
+                  <!-- Product image-->
+                  <img class="card-img-top" src="https://www.ktronix.com/medias/047875785489-001-750Wx750H?context=bWFzdGVyfGltYWdlc3wzMTA4NDR8aW1hZ2UvanBlZ3xpbWFnZXMvaGMyL2hhMi85ODIyMDEwMTc5NjE0LmpwZ3xhNTRiMGNmMWEwOGRjZmRjZjc4ZTFjNmFlNThmYjc1MTUwMTNlYmQ2ZGQ4NmI3OTkyNWFlMWZmMzU0ODQ1NDFm" alt="..." />
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Product name-->
+                          <h5 class="fw-bolder">Crash bandicoot 4</h5>
+                          <!-- Product price-->
+                          $120.00 - $280.00
+                      </div>
+                  </div>
+                  <!-- Product actions-->
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="c-flex">
+                      <div class="c-flex-item" data-bs-toggle="modal" data-bs-target="#message">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>
+                      </div>
+                      <div class="c-flex-item">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal">Finalizar compra</a></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+  <footer class="bg-dark text-white">
+    <p class="text-center p-1 m-0">
+      copyright 2021
+    </p>
+  </footer>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Finalizar compra</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <img src="./assets/images/pagos.PNG" class="w-100 mb-3" alt="">
+            <div class="text-center"><a class="btn btn-secondary" href="">Finalizar</a></div>
+          </form>
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Mesagges -->
+  <div class="modal fade" id="message" tabindex="-1" aria-labelledby="messageLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title text-center" id="messageLabel">Comunicate con el vendedor</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="floatingTextarea">Mensaje</label>
+              <textarea class="form-control" placeholder="Escribe aquí..." id="floatingTextarea"></textarea>
+            </div>
+            <div class="text-center"><a class="btn btn-secondary">Enviar</a></div>
+
+          </form>
+        </div>
+    </div>
+  </div>
+  </body>
+</html>
