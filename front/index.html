@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <!-- JavaScript Bundle with Popper -->
+  <script type="text/javascript">
+
+    const ws = new WebSocket('ws://localhost:3000');
+
+    ws.onopen = function () {
+      ws.send("mensaje de prueba");
+      alert("enviando mensaje de prueba a API...");
+    };
+
+    ws.onmessage = function (evt) {
+      var resp = evt.data;
+      alert(`API responde: ${resp}`);
+    };
+
+    ws.onerror = () => {
+      alert('Error al comunicarse con API')
+      window.location('/')
+    }
+
+    ws.onclose = function () {
+
+      alert("Conexión cerrada...");
+    };
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-joystick"
+            viewBox="0 0 16 16">
+            <path
+              d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z" />
+            <path
+              d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z" />
+          </svg>
+          <span class="ms-2">
+            Games
+          </span>
+
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./juegos.html">Juegos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./comprar.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-cart-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                      <path fill-rule="evenodd"
+                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                    </svg>
+                    Iniciar sesión
+                  </a></li>
+                <li class="hidden"><a class="dropdown-item" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z" />
+                      <path fill-rule="evenodd"
+                        d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                    </svg>
+                    Cerrar sesión
+                  </a></li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- carrousel de imágenes -->
+  <section>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img src="https://media.vandal.net/m/7-2020/20207241783010_1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item active">
+          <img
+            src="https://compass-ssl.xbox.com/assets/8d/ac/8dac2278-aef9-4a8c-bd68-739693d639c2.jpg?n=Halo-Franchise-2020_Super-Hero-1400_1920x1080.jpg"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/MW_OP_TOUT.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <!-- categorías principales -->
+  <section>
+    <div class="container mt-5 ">
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="./assets/images/xbox.PNG" class="c-cardIcons">
+          <h5 class="text-center"> Xbox </h5>
+        </div>
+        <div class="col-sm-3">
+          <img src="./assets/images/nintendo.PNG" class="c-cardIcons">
+          <h5 class="text-center"> Nintendo </h5>
+        </div>
+        <div class="col-sm-3">
+          <img src="./assets/images/ps.PNG" class="c-cardIcons">
+          <h5 class="text-center"> PlayStation </h5>
+        </div>
+        <div class="col-sm-3">
+          <img src="./assets/images/retro.PNG" class="c-cardIcons">
+          <h5 class="text-center"> Retro </h5>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- descripción proyecto -->
+  <section>
+    <div class="container-fluid mt-5 p-0 border">
+      <div class="p-5 bg-light rounded-3">
+        <div class="container py-5">
+          <div class="row align-items-center">
+            <div class="col-sm-7">
+              <h1 class="display-5 fw-bold">Sobre nosotros</h1>
+              <p class="col-md-8 fs-4">
+                Ofrecemos un amplio catalogo de videojuegos, priorizando las exigencias del cliente. Aquí podras
+                encontrar tus videojuegos favoritos,desde los juegos retro que te gustaban desde los 5 años, hasta
+                aquellos en alta definición en 4k y 60 fotogramas por segundo.
+              </p>
+            </div>
+            <div class="col-sm-5">
+              <img
+                src="https://bolavip.com/__export/1618845776944/sites/bolavip/img/2021/04/19/horizon-zero-dawn-ps4-ps5-gratis_crop1618845776317.jpg_1635092770.jpg"
+                class="w-100 rounded-3">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- Registrate -->
+  <section>
+    <div class="container-fluid p-0">
+      <div class="h-100 p-5 text-white bg-dark ">
+        <div class="row align-items-center justify-content-around">
+          <div class="col-sm-6">
+            <h2>Registrate en el mundo gamer</h2>
+            <p>
+              Nuetras lista de juegos es un catalogo muy variado con lo mejor del mercado. Contamos con excelentes
+              ofertas y promociones al alcance de todo el público. Los pagos se pueden realizar por tarjetas de crédito
+              Visa y Mastercad, efectivo o pagos en línea. Enviós a nivel nacional
+            </p>
+            <p>Contamos con un execelente equipo de trabajo el cual contribuye cumplir todas las espectativas de
+              nuestros clientes.</p>
+            <p>Nuestros estandares estan diseñados para facilitar el acercamiento entre vendedor y comprador. </p>
+
+          </div>
+          <div class="col-sm-5">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="name">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Rol</option>
+                  <option value="1">Vendedor</option>
+                  <option value="2">Comprador</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-secondary">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white">
+    <p class="text-center p-1 m-0">
+      copyright 2021
+    </p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="EnviarDatos(ws)">
+            <div class="mb-3">
+              <label for="emailToSend" class="form-label">Correo</label>
+              <input id="emailToSend" name="emailToSend" type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="pswToSend" class="form-label">Contraseña</label>
+              <input id="pswToSend" name="pswToSend" type="password" class="form-control">
+            </div>
+            <div class="mb-3">
+              <select id="InputRolUser" name="InputRolUser" class="form-select" aria-label="Default select ">
+                <option selected>Rol</option>
+                <option value="1">Comprador</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-secondary">Entrar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+      <script type="text/javascript" src="./models/Class_usuario.js"></script>
+
+</body>
+
+</html>

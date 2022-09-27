@@ -6,4 +6,3 @@ const makeRandomId = (variable, length) => {
     }
     return result;
 }
-module.exports = makeRandomId

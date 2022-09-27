@@ -1,10 +1,20 @@
-import {Usuario} from './models/Class_usuario';
+import Usuario from './models/Class_usuario';
+import idRandom from './models/idRandom';
 
-function IniciarSesion() {
-    let emailToSend = document.getElementById('emailToSend').value;
-    let pswToSend = document.getElementById('pswToSend').value;
+function EnviarDatos(ws) {
+    var emailToSend = document.getElementById('emailToSend').value;
+    var pswToSend = document.getElementById('pswToSend').value;
+    var InputRolUser = document.getElementById('InputRolUser').value;
 
-    const U = new Usuario();
-    console.log(U.saveGames('holass'));
+
+    datos = {
+        a: emailToSend,
+        b: pswToSend,
+        c: InputRolUser
+    }
+
+    ws.send(JSON.stringify(datos));
+    alert("enviando datos...");
+
 
 }

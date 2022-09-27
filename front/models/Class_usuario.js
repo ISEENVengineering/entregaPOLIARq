@@ -11,15 +11,6 @@ class Usuario {
         this.rol = rol;
         console.log('Usuario creado');
     }
-    /*
-       InputName: req.body.InputName,
-           InputLastN: req.body.InputLastN,
-           emailToSend: req.body.emailToSend,
-           pswToSend: req.body.pswToSend,
-           InputYOld: req.body.InputYOld,
-           InputRolUser: req.body.InputRolUser
-       */
-
     get() {
         json_user = {
             id: this.id,
@@ -34,71 +25,47 @@ class Usuario {
         }
         return json_user
     }
-   
-    sendEMails(pathAPI, datos) {
-        console.log('sending email: ', datos.InputName)
 
-        return datos;
-    }
+    set(id, nombres, apellidos, emailAddrs, psw, edad, numJuegos, juegos, rol) {
 
-    listGames(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('listing games')
-        }
-        return resp;
-    }
+        this.id = idRandom(emailAddrs, 10);
+        this.emailAddrs = emailAddrs;
+        this.psw = pswToSend;
+        this.rol = this.InputRolUser;
 
-    searchGames(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('searching games')
-        }
-        return resp;
-    }
-    saveGames(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('saving games');
-            resp = datos;
-        }
-        return resp;
-    }
-    deleteGames(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('delete games');
-        }
-        return resp;
-    }
-    searchDataUser(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('seaching user');
-        }
-        return resp;
-    }
-    saveDataUSer(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('save user');
-        }
-        return resp;
-    }
-    editDataUser(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('edit user');
-        }
-        return resp;
-    }
-    deleteUser(datos) {
-        let resp = null;
-        if (datos !== null) {
-            console.log('delete User');
-        }
-        return resp;
+        return { _: this.id, a: this.emailAddrs, b: this.psw, c: this.rol }
     }
 }
 
-module.exports = Usuario
+function EnviarDatos(ws) {
+    var emailToSend = document.getElementById('emailToSend').value;
+    var pswToSend = document.getElementById('pswToSend').value;
+    var InputRolUser = document.getElementById('InputRolUser').value;
+
+
+    var Usr = new Usuario()
+    Usr.set(
+        idRandom(emailToSend, 32),
+        '',
+        '',
+        emailToSend,
+        pswToSend,
+        0,
+        0,
+        '',
+        InputRolUser
+    )
+    datos = Usr.get()
+
+    ws.send(JSON.stringify(datos));
+    alert("enviando datos...");
+}
+
+function idRandom(variable, length) {
+    let result = ''
+    const characters = `${variable}+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
