@@ -1,14 +1,11 @@
 
 const express = require('express');
 const app = express();
+const morgan = require('morgan')
 app.set("port", 3000);
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.get('/api', (req, res) => {
-  res.send('api web');
-});
 
 datosPrueba = {
   usuarios: [
@@ -25,9 +22,36 @@ datosPrueba = {
       psw: "qwerty",
       InputRolUser: '1'
     },
+  ],
+  videoJuegos: [
+    {
+      id: '1',
+      nombre: "god of war 1",
+      consola: 'ps4'
+    }, 
+    {
+      id: '2',
+      nombre: "god of war 2",
+      consola: 'ps4'
+    },
+    {
+      id: '3',
+      nombre: "god of war 3",
+      consola: 'ps4'
+    }
   ]
 }
 
+//middlewares: 
+//morgan : ver por consola lo que llega delo servidor
+app.use(morgan('dev')) //combined
+app.use((express.urlencoded({ extended: false })))
+app.use(express.json())
+
+//endpoints
+app.get('/all', (req, res) => {
+  res.json(datosPrueba.usuarios)
+})
 
 app.get('/api/usuarios/datos', (req, res) => {
   let datosLLegan = {
@@ -35,28 +59,38 @@ app.get('/api/usuarios/datos', (req, res) => {
     pswToSend: req.query.pswToSend,
     InputRolUser: req.query.InputRolUser
   }
-  res.send(AlmacenarDatos(datosLLegan))
+  res.json(AlmacenarDatos(datosLLegan))
   console.log('datosllegam: ', datosLLegan);
 })
 
-function AlmacenarDatos(datos) {
-  let resp = 404
+app.get('/api/usuarios/datos/filter', (req, res) => {
+  let datosAEnviar = FiltrarDatos(req.query)
+  res.json(datosAEnviar)
+})
+AlmacenarDatos = (datos) => {
+  let resp = {}
   for (let index = 0; index < datosPrueba.usuarios.length; index++) {
     if (
       datosPrueba.usuarios[index].email === datos.emailToSend &&
       datosPrueba.usuarios[index].psw === datos.pswToSend &&
       datosPrueba.usuarios[index].InputRolUser === datos.InputRolUser
     ) {
-      resp = 200
+      resp = datosPrueba.usuarios[index]
       break
     }
   }
   return resp
 }
+FiltrarDatos = (datosQuery) => {
+  
+}
 
 app.listen(app.get('port'), () => {
   console.log('Servidor iniciado en el puerto: ' + app.get('port'));
 })
+
+
+
 // const server = require('http').Server(app);
 // const WebSocketServer = require("websocket").server;
 //const path = require("path");
