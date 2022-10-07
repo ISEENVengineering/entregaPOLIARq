@@ -1,0 +1,22 @@
+/**
+* Estilos pagina principal
+*/
+.carousel-item {
+  max-height: 450px;
+}
+.c-cardIcons {
+  margin: 0 auto;
+  width: 60%;
+  display: block;
+  border-radius: 30%;
+}
+
+.hidden {
+  display: none;
+}
+
+.c-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
